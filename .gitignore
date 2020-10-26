@@ -36,3 +36,5 @@ out/
 application.properties
 
 resources/
+
+.env
