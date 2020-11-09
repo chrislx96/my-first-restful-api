@@ -6,6 +6,7 @@ import com.chris.demo.dtos.user.UserPutDto;
 import com.chris.demo.entities.User;
 import com.chris.demo.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,8 @@ import java.util.UUID;
 @RequestMapping("/users")
 public class UserController {
 
-    private final UserService userService;
+    @Autowired
+    private UserService userService;
 
     @PostMapping
     public ResponseEntity<UserGetDto> add(@RequestBody UserPostDto userPostDto) {
